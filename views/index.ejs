@@ -1,0 +1,12 @@
+<%- include("partials/header.ejs") %>
+
+    <form action="/submit", method="POST">
+        <label for="name">Title:</label>
+        <input type="text", name="blog-title", placeholder="type your blog title">
+        <br>
+        <label for="name">Blog:</label>
+        <textarea name="content"></textarea><br>
+        <input type="submit" value="Post">
+    </form>
+
+    <%- include("partials/footer.ejs", {year: new Date()}) %>
