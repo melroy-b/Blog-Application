@@ -13,5 +13,5 @@ router.get("/", (req, res) => {
 })
 
 router.listen(port, () => {
-    console.log(`Listening on port ${port}`);
+    console.log(`Server running on http://localhost:${port}`);
 })
