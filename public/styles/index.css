@@ -2,7 +2,48 @@ body {
   font-family:'Times New Roman', Times, serif;  
 }
 
-.container {
-  display: flex;
-  gap: 10px;
+.gradient-background {
+  background: linear-gradient(300deg, #cfc7d4, #cdffd4, #bbebb9);
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
 }
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.blog-posts-container {
+  max-width: 800px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow-y: auto;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  border-bottom: 1rem;
+}
+
+.blog-post {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  color: black;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+/* footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+} */

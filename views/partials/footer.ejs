@@ -1,11 +1,38 @@
-</main>
+  </main>
 
-<footer>
-  <!-- Step 4 - Add a dynamic year to the footer using JS. -->
-  <p>© <%= year.getFullYear() %>, MB</p>
-</footer>
+  <div class="container">
+    <footer
+      class="d-flex flex-wrap justify-content-between align-items-center py-2 my-4 border-top"
+    >
+      <div class="col-md-4 d-flex align-items-center">
+        <span class="mb-3 mb-md-0 text-body-secondary">© <%= new Date().getFullYear() %> Melroy Barreto</span>
+      </div>
+      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex"> 
+        <li class="ms-3">
+          <a class="text-body-secondary" href="https://www.instagram.com/" aria-label="Instagram">
+            <svg class="bi" width="24" height="24" aria-hidden="true"><use href="/assets/instagram.svg"></use></svg>
+          </a></li> 
+        <li class="ms-3">
+          <a class="text-body-secondary" href="https://github.com/melroy-b" aria-label="Github">
+            <svg class="bi" width="24" height="24"><use href="/assets/github.svg"></use></svg></a>
+        </li> 
+      </ul>
+    </footer>
+  </div>
 
-<script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    $(".nav-link").on("click", function () {
+      $(".nav-link").removeClass("active");
+      $(this).addClass("active");
+    });
+  </script>
 </body>
 
-</html>
+</html> 
