@@ -1,12 +1,22 @@
 <%- include("partials/header.ejs") %>
 
-<form action="/submit" , method="POST">
-  <label for="name">Title:</label>
-  <input type="text" , name="blog-title" , placeholder="type your blog title" />
-  <br />
-  <label for="name">Blog:</label>
-  <textarea name="content"></textarea><br />
-  <input type="submit" value="Post" />
-</form>
+
+  <h1 class="">Welcome to my Blog</h1>
+  <h3 class="">Blog posts</h2>
+  <div class="blog-posts-container">
+  <% if (locals.blogPosts && locals.blogPosts.length > 0) { %>
+    <% blogPosts.forEach(function(post) { %>
+      <div class="blog-post">
+        <h3><%= post.title %></h3>
+        <p><%= post.content %></p>
+      </div>
+    <% }); %>
+  <% } else { %>
+    <p>No blog posts yet :/</p>
+  <% } %>
+</div>
+<button type="submit" onclick="window.location.href='/create-post'" class="btn btn-dark">Create Post</button>
+
+</section>
 
 <%- include("partials/footer.ejs", {year: new Date()}) %>
