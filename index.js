@@ -57,6 +57,21 @@ app.post("/create-post", (req, res) => {
     res.redirect("/");
 })
 
+app.get("/post/:id", (req, res) => {
+    try {
+        const postId = parseInt(req.params.id);
+        const post = blogPosts.find(p => p.id === postId);
+        console.log("Post accessed:", post);
+
+        if (post) {
+            res.render("blog-post.ejs", { post });
+        }
+    } catch (error) {
+        
+    }
+})
+
+
 
 app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);

@@ -6,10 +6,12 @@
   <div class="blog-posts-container">
   <% if (locals.blogPosts && locals.blogPosts.length > 0) { %>
     <% blogPosts.forEach(function(post) { %>
-      <div class="blog-post">
-        <h3><%= post.title %></h3>
-        <p><%= post.content %></p>
-      </div>
+      <button onclick="window.location.href='/post/<%= post.id %>'">
+        <div class="blog-post">
+          <h4><%= post.title %></h4>
+          <p><%= post.content %></p>
+        </div>
+      </button>
     <% }); %>
   <% } else { %>
     <p>No blog posts yet :/</p>
