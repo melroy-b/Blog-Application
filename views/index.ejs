@@ -2,13 +2,18 @@
 
 
   <h1 class="">Welcome to my Blog</h1>
-  <h3 class="">Blog posts</h2>
+  <br>
+  <h4 class="">Blog posts</h2>
   <div class="blog-posts-container">
   <% if (locals.blogPosts && locals.blogPosts.length > 0) { %>
     <% blogPosts.forEach(function(post) { %>
       <button onclick="window.location.href='/post/<%= post.id %>'">
         <div class="blog-post">
-          <h4><%= post.title %></h4>
+          <div class="d-flex justify-content-between">
+            <h5 style="font-weight: bold;"><%= post.title %></h5>
+            <p style="font-weight: small;"><%= post.author %>, <span style="color: grey;">#id: <%= post.id %></span></p>
+          </div>
+          <br>
           <p><%= post.content %></p>
         </div>
       </button>
@@ -21,4 +26,4 @@
 
 </section>
 
-<%- include("partials/footer.ejs", {year: new Date()}) %>
+<%- include("partials/footer.ejs") %>

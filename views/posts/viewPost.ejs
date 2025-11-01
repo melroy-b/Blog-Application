@@ -1,0 +1,22 @@
+<%- include("../partials/header.ejs") %>
+
+<div>
+    <div class="blog-post">
+          <div class="d-flex justify-content-between">
+            <h2 style="font-weight: bold;"><%= post.title %></h5>
+            <p style="font-weight: small;"><%= post.author %>, <span style="color: grey;">#id: <%= post.id %></span></p>
+          </div>
+          <br>
+          <p><%= post.content %></p>
+    </div>
+
+
+    <div class="d-flex gap-2">
+        <form action="/post/<%= post.id %>?_method=DELETE" method="POST">
+            <button type="submit" class="btn btn-dark">Delete Post</button>
+        </form>     
+        <button onclick="window.location.href='/post/<%= post.id%>/edit-post'" class="btn btn-dark">Edit Post</button>
+    </div>
+</div>
+
+<%- include("../partials/footer.ejs") %>

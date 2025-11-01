@@ -1,0 +1,42 @@
+<%- include("../partials/header.ejs") %>
+
+<form action="/post/<%= post.id %>?_method=PUT" , method="POST">
+  <div class="mb-4">
+    <label for="exampleFormControlInput2" class="form-label">Author <span style="color: red;">*</span></label>
+    <input
+      type="text"
+      name="author"
+      class="form-control"
+      id="author"
+      placeholder="Username"
+      value="<%= post.author%>"
+      required
+    />
+  </div>
+  <div class="mb-3 mt-3">
+    <label for="exampleFormControlInput1" class="form-label">Title <span style="color: red;">*</span></label>
+    <input
+      type="text"
+      name="title"
+      class="form-control"
+      id="title"
+      placeholder="Concise title for your blog post"
+      value="<%= post.title%>"
+      required  
+    />
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Content <span style="color: red;">*</span></label>
+    <textarea
+      class="form-control"
+      name="content"
+      id="content"
+      placeholder="Write your blog here....."
+      rows="3"
+      required
+    ><%= post.content %></textarea>
+    </div>
+  <button type="submit" class="btn btn-dark">Edit Post</button>
+</form>
+
+<%- include("../partials/footer.ejs") %>
