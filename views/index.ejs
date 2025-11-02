@@ -1,4 +1,4 @@
-<%- include("partials/header.ejs") %>
+<%- include("partials/header.ejs", {nav: "blogs"}) %>
 
 
 <h1 class="fw-bold">Welcome to my Blog</h1>
@@ -8,7 +8,7 @@
   <% if (locals.blogPosts && locals.blogPosts.length > 0) { %>
     <% blogPosts.forEach(function(post) { %>
       <div class="p-3 bg-body-tertiary border rounded-3 overflow-hidden" style="height: 150px;"> 
-        <button onclick="window.location.href='/post/<%= post.id %>'">
+        <button onclick="window.location.href='/post/<%= post.id %>'" class="w-100">
         <!-- <div class="blog-post"> -->
           <div class="d-flex flex-wrap gap-2 justify-content-between">
             <h5 style="font-weight: bold;"><%= post.title %></h5>
