@@ -49,3 +49,11 @@ button {
   cursor: pointer;
   text-align: left;
 }
+
+img {
+  width: 440px;
+  height: 520px;
+  object-fit: cover; /* makes the image fill the area nicely */
+  display: block;
+  margin-left: 20%;
+}
