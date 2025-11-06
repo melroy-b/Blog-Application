@@ -10,6 +10,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const port = process.env.PORT || 3000;
 const app = express();
+app.set("view engine", "ejs");
 
 let blogPosts = [];
 let idCounter = 0;
