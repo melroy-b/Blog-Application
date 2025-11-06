@@ -67,7 +67,7 @@ app.post("/create-post", (req, res) => {
         console.log("Blog post created:", blogPosts);
         
         res.redirect("/");
-        res.sendStatus(200);  
+        //res.sendStatus(200);  
     } catch (error) {
         res.status(500).send("Internal Server Error");
         console.error("Error creating blog post:", error);
