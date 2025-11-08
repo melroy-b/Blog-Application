@@ -1,4 +1,4 @@
-Capstone Project - Static Blog Application
+# Capstone Project - Static Blog Application
 
 # Project Setup
 
